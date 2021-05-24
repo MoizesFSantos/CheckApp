@@ -1,12 +1,25 @@
-import 'package:check_app/shared/components/navigation.dart';
+import 'package:check_app/screens/calendar/calendarScreen.dart';
+import 'package:check_app/screens/home/home.dart';
+import 'package:check_app/screens/profile/profile.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
+class PageTest extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _PageTestState createState() => _PageTestState();
 }
 
-class _HomeState extends State<Home> {
+class _PageTestState extends State<PageTest> {
+  void onTabTapped(int index) {
+   setState(() {
+     _currentIndex = index;
+   });
+ }
+  int _currentIndex = 0;
+  final List<Widget> _children = [
+    Home(),
+    Calendar(),
+    ProfileScreen(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,18 +62,25 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 200,
-            ),
-          ],
-        ),
+      body: _children[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped,
+       currentIndex: _currentIndex,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.check_box),
+            label: 'Tasks',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.today),
+            label: 'Calendar',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            label: 'Profile',
+          ),
+        ],
       ),
-      floatingActionButton:
-          FloatingActionButton(child: Icon(Icons.add), onPressed: () {}),
-      bottomNavigationBar: BottomMenu()
     );
   }
 }
