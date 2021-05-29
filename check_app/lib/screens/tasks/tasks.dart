@@ -25,8 +25,34 @@ class _TasksState extends State<Tasks> {
             key: Key(todos[index]),
             child: Card(
               elevation: 3,
-              child: ListTile(
-                title: Text('${todos[index]}'),
+              child: Column(
+                children: [
+                  ListTile(
+                    title: Text('${todos[index]}'),
+                  ),
+                  Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        'Priority: 03',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 15,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 50,
+                      ),
+                      Text(
+                        '29/05/2021',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 15,
+                        ),
+                      )
+                    ],
+                  )
+                ],
               ),
             ),
           );
