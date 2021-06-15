@@ -14,7 +14,8 @@ class ProfileScreen extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 1,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
+                  bottomLeft: Radius.elliptical(120, 100),
+                  
                   // bottomRight: Radius.circular(-30),
                 ),
                 color: Theme.of(context).primaryColor,

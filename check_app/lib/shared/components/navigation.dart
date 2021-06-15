@@ -38,6 +38,13 @@ class _DrawerMenuState extends State<DrawerMenu> {
             leading: Icon(Icons.settings),
             title: Text('Settings'),
           ),
+           ListTile(
+            leading: Icon(Icons.logout),
+            title: Text('Logout'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/login');
+            },
+          ),
         ],
       ),
     );

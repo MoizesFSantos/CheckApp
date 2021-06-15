@@ -1,3 +1,6 @@
+import 'package:check_app/screens/loginForm/login.dart';
+import 'package:check_app/screens/newTask/newTask.dart';
+import 'package:check_app/screens/userRegister/user_register.dart';
 import 'package:flutter/material.dart';
 import './screens/home/home.dart';
 
@@ -15,9 +18,13 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.teal,
           primaryColor: Colors.teal[400],
         ),
-        initialRoute: '/home',
+        initialRoute: '/login',
         routes: {
+          '/login': (context) => Login(),
           '/home': (context) => Home(),
+          '/register': (context) => Register(),
+          '/taskRegister': (context) => NewTask(),
+
         });
   }
 }

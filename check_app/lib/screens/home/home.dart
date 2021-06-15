@@ -26,6 +26,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
         brightness: Brightness.dark,
         iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Theme.of(context).primaryColor,
@@ -35,31 +36,7 @@ class _HomeState extends State<Home> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: Text(
-                    'Add new Task',
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                  content: TextFormField(
-                    onChanged: (String value) {},
-                  ),
-                  actions: <Widget>[
-                    IconButton(
-                        color: Theme.of(context).primaryColor,
-                        icon: Icon(Icons.send_rounded),
-                        onPressed: () {
-                          setState(() {
-                            //
-                          });
-                        })
-                  ],
-                );
-              });
+          Navigator.of(context).pushNamed('/taskRegister');
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
