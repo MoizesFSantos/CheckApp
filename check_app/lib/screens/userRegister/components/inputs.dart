@@ -1,3 +1,4 @@
+import 'package:check_app/viewModel/register_auth.dart';
 import 'package:flutter/material.dart';
 
 class InputUser extends StatefulWidget {
@@ -10,9 +11,11 @@ class _InputUserState extends State<InputUser> {
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: formKey,
       child: Column(
         children: [
           TextFormField(
+            controller: getName,
             keyboardType: TextInputType.name,
             decoration: InputDecoration(
                 suffixIcon: GestureDetector(
@@ -28,6 +31,8 @@ class _InputUserState extends State<InputUser> {
             height: MediaQuery.of(context).size.height * .03,
           ),
           TextFormField(
+            controller: getEmail,
+            validator: emailValidation,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
                 suffixIcon: GestureDetector(
@@ -43,6 +48,8 @@ class _InputUserState extends State<InputUser> {
             height: MediaQuery.of(context).size.height * .03,
           ),
           TextFormField(
+            controller: getPass,
+            validator: passValidation,
             keyboardType: TextInputType.emailAddress,
             obscureText: showPassword,
             decoration: InputDecoration(
@@ -59,6 +66,7 @@ class _InputUserState extends State<InputUser> {
             height: MediaQuery.of(context).size.height * .03,
           ),
           TextFormField(
+            controller: getPassConfirm,
             obscureText: showPassword,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(

@@ -1,4 +1,5 @@
 import 'package:check_app/screens/userRegister/components/inputs.dart';
+import 'package:check_app/viewModel/register_auth.dart';
 import 'package:flutter/material.dart';
 
 // the visual is pretty good
@@ -25,7 +26,11 @@ class Register extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).pushReplacementNamed('/login');
                     }),
-                IconButton(icon: Icon(Icons.save_alt_rounded), onPressed: () {})
+                IconButton(
+                    icon: Icon(Icons.save_alt_rounded),
+                    onPressed: () {
+                      doSignUp();
+                    })
               ],
             )
           ],

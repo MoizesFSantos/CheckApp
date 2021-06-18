@@ -6,6 +6,7 @@ class ProfileScreen extends StatelessWidget {
     return Column(
       children: <Widget>[
         Stack(
+          // ignore: deprecated_member_use
           overflow: Overflow.visible,
           alignment: Alignment.center,
           children: <Widget>[

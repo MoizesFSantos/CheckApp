@@ -1,3 +1,4 @@
+import 'package:check_app/viewModel/log_auth.dart';
 import 'package:flutter/material.dart';
 
 class InputForm extends StatefulWidget {
@@ -10,9 +11,12 @@ class _InputFormState extends State<InputForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: loginKey,
       child: Column(
         children: [
           TextFormField(
+            controller: getEmail,
+            validator: validaLogin,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
                 suffixIcon: GestureDetector(
@@ -28,6 +32,8 @@ class _InputFormState extends State<InputForm> {
             height: MediaQuery.of(context).size.height * .03,
           ),
           TextFormField(
+            controller: getPassword,
+            validator: validaPass,
             obscureText: obscureText,
             decoration: InputDecoration(
                 suffixIcon: GestureDetector(
@@ -53,7 +59,7 @@ class _InputFormState extends State<InputForm> {
           ),
           ElevatedButton(
             onPressed: () {
-               Navigator.of(context).pushReplacementNamed('/home');
+              loginSucess(context);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
