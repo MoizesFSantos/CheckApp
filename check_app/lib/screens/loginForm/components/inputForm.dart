@@ -29,7 +29,7 @@ class _InputFormState extends State<InputForm> {
                 border: OutlineInputBorder()),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * .03,
+            height: MediaQuery.of(context).size.height * .02,
           ),
           TextFormField(
             controller: getPassword,

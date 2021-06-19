@@ -50,7 +50,7 @@ class Login extends StatelessWidget {
               ),
               Container(
                 padding: EdgeInsets.symmetric(vertical: 70, horizontal: 30),
-                height: MediaQuery.of(context).size.height * .6,
+                height: MediaQuery.of(context).size.height * .62,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   color: Colors.white,
