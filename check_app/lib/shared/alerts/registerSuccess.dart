@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-alert(BuildContext context) {
+success(BuildContext context) {
   showDialog<String>(
     context: context,
     builder: (BuildContext context) => AlertDialog(
@@ -12,13 +11,13 @@ alert(BuildContext context) {
               height: 50,
               width: 50,
               decoration: BoxDecoration(
-                color: Colors.redAccent[700],
+                color: Colors.green,
                 shape: BoxShape.circle,
               ),
               child: Icon(
-                Icons.error_outline_rounded,
+                Icons.check,
                 color: Colors.white,
-                size: 40,
+                size: 30,
               ),
             ),
             SizedBox(
@@ -28,7 +27,7 @@ alert(BuildContext context) {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Ops, something is wrong',
+                  'Registration successfull',
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                   ),
@@ -37,7 +36,7 @@ alert(BuildContext context) {
                   height: 5,
                 ),
                 Text(
-                  'Please check',
+                  'Welcom to Check It Out',
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w300,
@@ -50,7 +49,7 @@ alert(BuildContext context) {
       ),
       actions: <Widget>[
         TextButton(
-          onPressed: () => Navigator.pop(context, 'OK'),
+          onPressed: () => Navigator.of(context).pushNamed('/login'),
           child: const Text('OK'),
         ),
       ],

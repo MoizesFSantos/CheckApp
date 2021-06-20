@@ -1,3 +1,4 @@
+import 'package:check_app/shared/alerts/error.dart';
 import 'package:check_app/shared/api/sign_In.dart';
 import 'package:flutter/material.dart';
 
@@ -22,12 +23,12 @@ String validaPass(String texto) {
   return null;
 }
 
-void loginSucess(BuildContext context) {
+void loginSuccess(BuildContext context) {
   if (loginKey.currentState.validate()) {
     LoginService().login(getEmail.text, getPassword.text);
     _navigateSucess(context);
-  }else{
-    
+  } else {
+    alert(context);
   }
 }
 

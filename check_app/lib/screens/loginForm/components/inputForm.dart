@@ -59,7 +59,7 @@ class _InputFormState extends State<InputForm> {
           ),
           ElevatedButton(
             onPressed: () {
-              loginSucess(context);
+              loginSuccess(context);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,

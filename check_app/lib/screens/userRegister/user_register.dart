@@ -27,10 +27,11 @@ class Register extends StatelessWidget {
                       Navigator.of(context).pushReplacementNamed('/login');
                     }),
                 IconButton(
-                    icon: Icon(Icons.save_alt_rounded),
-                    onPressed: () {
-                      doSignUp();
-                    })
+                  icon: Icon(Icons.save_alt_rounded),
+                  onPressed: () {
+                    doSignUp(context);
+                  },
+                )
               ],
             )
           ],

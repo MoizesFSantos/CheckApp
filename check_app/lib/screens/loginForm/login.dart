@@ -29,7 +29,7 @@ class Login extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * .15,
               ),
               Text(
-                'Check App.',
+                'Check It Out.',
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Stint Ultra Condensed',

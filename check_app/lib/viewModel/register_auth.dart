@@ -1,3 +1,5 @@
+import 'package:check_app/shared/alerts/error.dart';
+import 'package:check_app/shared/alerts/registerSuccess.dart';
 import 'package:check_app/shared/api/sign_up.dart';
 import 'package:flutter/material.dart';
 
@@ -30,9 +32,11 @@ String passValidation(String pass) {
   }
 }
 
-void doSignUp() {
+void doSignUp(BuildContext context) {
   if (formKey.currentState.validate()) {
     SignUpService().signup(getEmail.text, getPass.text);
-    
+    success(context);
+  } else {
+    alert(context);
   }
 }
